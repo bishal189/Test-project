@@ -56,3 +56,8 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
+
+
+
+def store(request):
+    return render(request,'store.html')
