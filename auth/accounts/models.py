@@ -47,11 +47,11 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser):
 
 
-    first_name=models.CharField(max_length=50)
-    last_name=models.CharField(max_length=50)
-    username=models.CharField(max_length=50,unique=True)
+    first_name=models.CharField(max_length=50,blank=True,null=True)
+    last_name=models.CharField(max_length=50,blank=True,null=True)
+    username=models.CharField(max_length=50,unique=True,null=True,blank=True)
     email=models.CharField(max_length=100,unique=True)
-    phone_number=models.CharField(max_length=12,blank=True)
+    phone_number=models.CharField(max_length=12,blank=True,null=True)
     
 
     # REQUIRED_FIELDS
@@ -74,9 +74,13 @@ class User(AbstractBaseUser):
 
 
 
-    def has_perm(self,perm,obj=None):
-        return self.is_admin
+    def has_perm(self, perm, obj=None):
+        # Custom permission logic here
+        return True
 
+    def has_module_perms(self, app_label):
+        # Custom logic here
+        return True
 
 
 

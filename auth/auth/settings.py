@@ -139,9 +139,9 @@ AUTH_USER_MODEL='accounts.user'
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT=BASE_DIR / 'static'
+
 STATICFILES_DIRS=[
-    'auth/static'
+    BASE_DIR/'static'
 ]
 
 
