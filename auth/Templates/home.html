@@ -141,11 +141,9 @@
 										<div class="list-post featured">
 											<div class="img-holder">
 												<figure>
-													{% if vendor.user_profile.profile_picture %}
-													<img src="{{vendor.user_profile.profile_picture.url}}" class="img-thumb wp-post-image" alt="">
-												    {% else %}
+{% comment %} 													
 													<img src="{% static 'assets/images/default-profile.PNG' %}" class="img-thumb wp-post-image" alt=""> 
-													{% endif %}
+													{% endif %} {% endcomment %}
 												</figure>
 												<span class="restaurant-status close">
 													<em class="bookmarkRibbon"></em>Close
